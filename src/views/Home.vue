@@ -5,7 +5,7 @@
         Lorem ipsum
         <br />dolor sit amet
       </h1>
-     <p> <a href="">MEET A SENSEI</a></p>
+     <a href=""><div class="button">MEET A SENSEI</div></a>
     </div>
     <!-- ellipse shapes -->
     <svg
@@ -117,7 +117,7 @@
       </defs>
     </svg>
 
-    <svg class="group-3" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="group-3" height="110px" widt="110px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="50" fill="#F39D83" fill-opacity="0.2" />
       <circle cx="50" cy="50" r="40" fill="#F39D83" fill-opacity="0.2" />
       <circle cx="50" cy="50" r="25" fill="#F39D83" />
@@ -128,12 +128,12 @@
     </svg>
 
     <div class="social">
-      <a class="terms" href>Terms and privacy</a>
+      <a class="terms" href="">Terms and privacy</a>
       <div class="icons">
-        <a href>
+        <a href="">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href>
+        <a href="">
           <i class="fab fa-twitter"></i>
         </a>
       </div>
@@ -180,12 +180,12 @@ export default {
   transform: rotate(-90deg);
   height: 50px;
   position: absolute;
-  top: 400px;
+  bottom: 200px;
   text-decoration: none;
 }
 .icons {
   position: absolute;
-  top: 85vh;
+bottom:60px;
   text-align: center;
 
   width: inherit;
@@ -193,9 +193,15 @@ export default {
 
 .icons i {
   color: white;
+  display:flex;
+  margin: 15px auto;
+  width:13px;
+}
+/* .icons svg{
+  color: white;
   display: block;
   margin: 15px auto;
-}
+} */
 
 .icons a {
   text-decoration: none;
@@ -224,32 +230,30 @@ export default {
 }
 
 .group-3 {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  right: 70px;
-  top: 357px;
-  z-index: 10;
-  opacity: 0.75;
-  transition: 0.4s ease-out;
+  position:absolute;
+  right:20px !important;
+  top:62vh !important;
+  z-index: 1000;
+  opacity: 0.7;
+  transition:0.4s ease-out;
+    cursor: pointer;
 }
 
 .group-3:hover {
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-  opacity: 2;
+   opacity: 1;
+  transform: scale(1.1);
   transition: 0.4s ease-out;
 }
 
 .content {
-  overflow: hidden;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   width:100%;
+  margin:auto;
+    z-index:500;
+  transform: translateY(-50%);
+    top: 50%;
+
 }
 .content h1 {
   font-family: IBM Plex Serif;
@@ -257,11 +261,11 @@ export default {
   font-size: 50px;
   font-weight: 600;
   color: #ffffff; 
-
+margin-left:auto;
 }
 
 
-.content p {
+.button  {
   font-family: Montserrat;
   font-style: normal;
   font-weight: lighter;
@@ -282,7 +286,7 @@ export default {
   transition:0.3s ease-out;
 
 }
-.content p:hover{
+.button:hover{
 cursor: pointer;
 padding:10px 45px;
   transition:0.3s ease-out;

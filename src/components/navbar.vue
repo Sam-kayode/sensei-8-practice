@@ -122,6 +122,7 @@ z-index:5000;
     position:fixed;
 top:0px;  
 left:100px;
+z-index:300;
 
   }
  .logo img {
