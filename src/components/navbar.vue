@@ -227,7 +227,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in;
 }
  .side-nav li{
    list-style:none;
