@@ -110,8 +110,8 @@ export default {
   fill: none;
   stroke: black;
   stroke-width: 6;
-  transition: stroke-dasharray 300ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 100ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 100ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .line1 {
   stroke-dasharray: 60 207;
@@ -227,13 +227,13 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
  .side-nav li{
    list-style:none;
    text-decoration: none;
    padding:20px;
-    transition:0.3s ease-out;
+    transition:0.2s ease-out;
 
  }
 
@@ -251,7 +251,7 @@ svg {
   }
   .slide {
   margin-left: -70vw;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
 
 /* .paatern{
