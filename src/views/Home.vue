@@ -283,13 +283,13 @@ margin-left:auto;
   width: fit-content;
   padding: 10px 40px;
   margin: auto;
-  transition:0.3s ease-out;
+  transition:0.2s ease-out;
 
 }
 .button:hover{
 cursor: pointer;
-padding:10px 45px;
-  transition:0.3s ease-out;
+padding:10px 50px;
+  transition:0.2s ease-out;
 
 }
 

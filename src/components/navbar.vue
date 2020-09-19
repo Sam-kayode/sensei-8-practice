@@ -4,7 +4,9 @@
     <div class="navbar">
       <button
         class="harmburger"
-        onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+        :class="[
+        {'opened':toggled}]"
+        @click="toggle"
         aria-label="Main Menu"
       >
         <svg width="100" height="100" viewBox="0 0 100 100">
@@ -48,149 +50,229 @@
         </li>
       </ul>
     </div>
+
+    <!-- side nav-->
+
+    <div class="side-nav" :class="[
+        {'slide': !toggled}]">
+<!-- <div class="paatern">  <img src="../assets/Taieri.png" alt=""></div> -->
+      
+      <ul>
+        <li class="side-link" @click="toggle">
+          <router-link to="/">Home</router-link>
+        </li>
+        <li class="side-link" @click="toggle">
+          <router-link to="/about">About</router-link>
+        </li>
+        <li class="side-link" @click="toggle">
+          <router-link to="/sensei">Sensei</router-link>
+        </li>
+        <li class="side-link" @click="toggle">
+          <router-link to="/contact">Contact</router-link>
+        </li>
+        <li class="side-link" @click="toggle">
+          <router-link to="/pricing">Pricing</router-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "navabar",
+  data() {
+    return { toggled: false };
+  },
+  methods: {
+    toggle() {
+      this.toggled = !this.toggled;
+    },
+  },
 };
 </script>
 
 <style scoped>
-  .navbar{
-    position:relative;
-z-index:5000;
-  }
-  .harmburger {
-    background-color: #1D203F;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    position:fixed;
-    top:0;
-    left:0;
+.navbar {
+  position: relative;
+  z-index: 5000;
+}
+.harmburger {
+  background-color: #1d203f;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 90;
+  stroke-dashoffset: -90;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+button {
+  outline: none;
+}
 
-  }
-  .line {
-    fill: none;
-    stroke: black;
-    stroke-width: 6;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .line1 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  .line2 {
-    stroke-dasharray: 60 60;
-    stroke-width: 6;
-  }
-  .line3 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  .opened .line1 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
-  }
-  .opened .line2 {
-    stroke-dasharray: 1 90;
-    stroke-dashoffset: -90;
-    stroke-width: 6;
-  }
-  .opened .line3 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
-  }
-  button{
-   
-  outline:none;
-  
-  }
+svg {
+  height: 60px;
+  width: 70px;
+}
 
-  svg{
-    height:60px;
-    width:70px;
-  }
+/* logo image */
+.logo {
+  position: fixed;
+  top: 0px;
+  left: 100px;
+  z-index: 300;
+}
+.logo img {
+  width: 150px;
+  top: 0;
+}
 
-  /* logo image */
-  .logo{
-    position:fixed;
-top:0px;  
-left:100px;
-z-index:300;
+/* topnav */
 
-  }
- .logo img {
-width:150px;
-  top:0;
-  }
-
-  /* topnav */
-
-.topnav{
+.topnav {
   display: flex;
-flex-direction: column;
-padding: 0px;
-width: calc(100% - 270px);
-position: absolute;
-height: 49px;
-top: 10px;
-margin-left:200px;
-    z-index:2000;
+  flex-direction: column;
+  padding: 0px;
+  width: calc(100% - 270px);
+  position: absolute;
+  height: 49px;
+  top: 10px;
+  margin-left: 200px;
+  z-index: 2000;
 }
-.topnav ul{
-display: flex;
-flex-direction: row;
-padding: 0px;
-position: static;
-max-width: 605px;
-height: 20px;
-left: 0px;
-top: 0px;
-margin: auto;
+.topnav ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  position: static;
+  max-width: 605px;
+  height: 20px;
+  left: 0px;
+  top: 0px;
+  margin: auto;
 }
 
-.topnav li{
+.topnav li {
   flex: none;
-order: 0;
-align-self: center;
-margin: 0px 29px;
-list-style: none;
-position:relative;
-font-family: Montserrat;
-font-style: normal;
-
+  order: 0;
+  align-self: center;
+  margin: 0px 29px;
+  list-style: none;
+  position: relative;
+  font-family: Montserrat;
+  font-style: normal;
 }
 
-.navlink::before{
-  content:"";
+.navlink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -13px;
+  background-color: #e6947b;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 650ms;
+}
+.navlink:hover::before {
+  transform: scaleX(1);
+}
+
+.topnav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+/* side-nav */
+.side-nav {
+  width: 70vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 4000;
+  background-color: #14162b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-out;
+}
+ .side-nav li{
+   list-style:none;
+   text-decoration: none;
+   padding:20px;
+    transition:0.3s ease-out;
+
+ }
+
+  .side-nav a{
+    text-decoration: none;
+       color:#ffff; 
+       position:relative;
+          z-index:50;
+
+  }
+
+  .side-nav li:hover{
+    transform: scale(1.2);
+    transition:0.3s ease-out;
+  }
+  .slide {
+  margin-left: -70vw;
+  transition: 0.5s ease-out;
+}
+
+/* .paatern{
   position:absolute;
-  left:0;
-  bottom:-13px;
-background-color:#e6947b;
+  height:100%;
+   z-index:10;
+right:0;     
+opacity: 0.9;
+
+}
+
+.paatern img{
+opacity: 0.04;
 width:100%;
-height:2px;
-transform:scaleX(0);
-transform-origin:center;
-transition: transform 650ms; 
-}
-.navlink:hover::before{
-  transform:scaleX(1)
-}
 
-.topnav a{
-color: #FFFFFF;
-text-decoration:none;
-}/* media-query */
+} */
+/* media-query */
 
-@media (max-width: 992px){
-.topnav{
-  display:none;
-}
+@media (max-width: 992px) {
+  .topnav {
+    display: none;
+  }
 }
 </style>
