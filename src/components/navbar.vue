@@ -227,7 +227,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-out;
 }
  .side-nav li{
    list-style:none;
@@ -251,7 +251,7 @@ svg {
   }
   .slide {
   margin-left: -70vw;
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in;
 }
 
 /* .paatern{
