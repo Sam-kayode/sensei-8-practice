@@ -110,8 +110,8 @@ export default {
   fill: none;
   stroke: black;
   stroke-width: 6;
-  transition: stroke-dasharray 100ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .line1 {
   stroke-dasharray: 60 207;
@@ -251,7 +251,7 @@ svg {
   }
   .slide {
   margin-left: -70vw;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-out;
 }
 
 /* .paatern{
