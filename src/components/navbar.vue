@@ -232,9 +232,9 @@ svg {
  .side-nav li{
    list-style:none;
    text-decoration: none;
-   padding:20px;
+   padding:20px 0px;
     transition:0.3s ease-out;
-
+margin:auto;
  }
 
   .side-nav a{
