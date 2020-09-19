@@ -227,13 +227,13 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in-out;
 }
  .side-nav li{
    list-style:none;
    text-decoration: none;
    padding:20px;
-    transition:0.2s ease-out;
+    transition:0.3s ease-out;
 
  }
 
