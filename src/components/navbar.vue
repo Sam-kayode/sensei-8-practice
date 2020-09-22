@@ -96,6 +96,7 @@ export default {
 .navbar {
   position: relative;
   z-index: 5000;
+  padding: 0;
 }
 .harmburger {
   background-color: #1d203f;
@@ -110,8 +111,8 @@ export default {
   fill: none;
   stroke: black;
   stroke-width: 6;
-  transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .line1 {
   stroke-dasharray: 60 207;
@@ -141,7 +142,7 @@ export default {
   stroke-width: 6;
 }
 button {
-  outline: none;
+  outline: none !important;
 }
 
 svg {

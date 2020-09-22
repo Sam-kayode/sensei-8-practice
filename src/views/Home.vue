@@ -5,7 +5,7 @@
         Lorem ipsum
         <br />dolor sit amet
       </h1>
-     <a href=""><div class="button">MEET A SENSEI</div></a>
+     <router-link to="/Sign-in"><div class="button">MEET A SENSEI</div></router-link>
     </div>
     <!-- ellipse shapes -->
     <svg
@@ -158,7 +158,7 @@ export default {
   background-size: cover;
   margin: 0px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .content a{
   text-decoration: none;

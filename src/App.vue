@@ -22,7 +22,6 @@ box-sizing: border-box;
 body{
   margin:0;
   padding:0;
-  background:black;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
